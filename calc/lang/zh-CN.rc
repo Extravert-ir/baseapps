@@ -1,19 +1,23 @@
-/* UTF-8 Conversion: Elton Chung aka MfldElton <elton328@gmail.com> (June, 2011) */
+/*
+ * Simplified Chinese translation for calc
+ *
+ * By: Song Fuchang (0xfc) <sfc_0@yahoo.com.cn>
+ */
 
-LANGUAGE LANG_GERMAN, SUBLANG_NEUTRAL
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
 
 // Dialog
 
 IDD_DIALOG_SCIENTIFIC DIALOGEX 0, 0, 316, 161
 STYLE DS_SHELLFONT | WS_MINIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "ReactOS Rechner"
+CAPTION "ReactOS 计算器"
 MENU IDR_MENU_SCIENTIFIC_1
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     GROUPBOX        "",IDC_STATIC,4,16,132,21
     CONTROL         "Hex",IDC_RADIO_HEX,"Button",BS_AUTORADIOBUTTON,8,24,29,10
-    CONTROL         "Dez",IDC_RADIO_DEC,"Button",BS_AUTORADIOBUTTON,40,24,29,10
-    CONTROL         "Okt",IDC_RADIO_OCT,"Button",BS_AUTORADIOBUTTON,72,24,27,10
+    CONTROL         "Dec",IDC_RADIO_DEC,"Button",BS_AUTORADIOBUTTON,40,24,29,10
+    CONTROL         "Oct",IDC_RADIO_OCT,"Button",BS_AUTORADIOBUTTON,72,24,27,10
     CONTROL         "Bin",IDC_RADIO_BIN,"Button",BS_AUTORADIOBUTTON,100,24,26,10
     GROUPBOX        "",IDC_STATIC,4,36,76,21
     CONTROL         "Inv",IDC_CHECK_INV,"Button",BS_AUTOCHECKBOX | 
@@ -135,25 +139,25 @@ BEGIN
     PUSHBUTTON      "F",IDC_BUTTON_F,288,140,24,17,BS_CENTER | BS_VCENTER | 
                     BS_NOTIFY | BS_OWNERDRAW | WS_TABSTOP
     GROUPBOX        "",IDC_STATIC,140,16,172,21
-    CONTROL         "Qword",IDC_RADIO_QWORD,"Button",BS_AUTORADIOBUTTON | 
+    CONTROL         "四字",IDC_RADIO_QWORD,"Button",BS_AUTORADIOBUTTON | 
                     NOT WS_VISIBLE,148,24,37,10
-    CONTROL         "Dword",IDC_RADIO_DWORD,"Button",BS_AUTORADIOBUTTON | 
+    CONTROL         "双字",IDC_RADIO_DWORD,"Button",BS_AUTORADIOBUTTON | 
                     NOT WS_VISIBLE,188,24,37,10
-    CONTROL         "Word",IDC_RADIO_WORD,"Button",BS_AUTORADIOBUTTON | NOT 
+    CONTROL         "字",IDC_RADIO_WORD,"Button",BS_AUTORADIOBUTTON | NOT 
                     WS_VISIBLE,232,24,33,10
-    CONTROL         "Byte",IDC_RADIO_BYTE,"Button",BS_AUTORADIOBUTTON | NOT 
+    CONTROL         "字节",IDC_RADIO_BYTE,"Button",BS_AUTORADIOBUTTON | NOT 
                     WS_VISIBLE,272,24,30,10
-    CONTROL         "Degree",IDC_RADIO_DEG,"Button",BS_AUTORADIOBUTTON,148,24,
+    CONTROL         "角度",IDC_RADIO_DEG,"Button",BS_AUTORADIOBUTTON,148,24,
                     42,10
-    CONTROL         "Radian",IDC_RADIO_RAD,"Button",BS_AUTORADIOBUTTON,192,
+    CONTROL         "弧度",IDC_RADIO_RAD,"Button",BS_AUTORADIOBUTTON,192,
                     24,42,10
-    CONTROL         "Grad",IDC_RADIO_GRAD,"Button",BS_AUTORADIOBUTTON,
+    CONTROL         "梯度",IDC_RADIO_GRAD,"Button",BS_AUTORADIOBUTTON,
                     236,24,44,10
     PUSHBUTTON      "C",IDC_BUTTON_CANC,272,40,40,17,BS_CENTER | BS_VCENTER | 
                     BS_NOTIFY | BS_OWNERDRAW | WS_TABSTOP
     PUSHBUTTON      "CE",IDC_BUTTON_CE,228,40,40,17,BS_CENTER | BS_VCENTER | 
                     BS_NOTIFY | BS_OWNERDRAW | WS_TABSTOP
-    PUSHBUTTON      "Zurück",IDC_BUTTON_BACK,184,40,40,17,BS_CENTER | 
+    PUSHBUTTON      "Back",IDC_BUTTON_BACK,184,40,40,17,BS_CENTER | 
                     BS_VCENTER | BS_NOTIFY | BS_OWNERDRAW | WS_TABSTOP
     RTEXT           "",IDC_TEXT_OUTPUT,4,4,308,12,SS_CENTERIMAGE,
                     WS_EX_CLIENTEDGE
@@ -162,7 +166,7 @@ END
 
 IDD_DIALOG_STANDARD DIALOGEX 0, 0, 172, 127
 STYLE DS_SHELLFONT | WS_MINIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "ReactOS Rechner"
+CAPTION "ReactOS 计算器"
 MENU IDR_MENU_STANDARD
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
@@ -170,7 +174,7 @@ BEGIN
                     BS_NOTIFY | BS_OWNERDRAW | WS_TABSTOP
     PUSHBUTTON      "CE",IDC_BUTTON_CE,84,24,40,17,BS_CENTER | BS_VCENTER | 
                     BS_NOTIFY | BS_OWNERDRAW | WS_TABSTOP
-    PUSHBUTTON      "Zurück",IDC_BUTTON_BACK,40,24,40,17,BS_CENTER | 
+    PUSHBUTTON      "Back",IDC_BUTTON_BACK,40,24,40,17,BS_CENTER | 
                     BS_VCENTER | BS_NOTIFY | BS_OWNERDRAW | WS_TABSTOP
     RTEXT           "",IDC_TEXT_OUTPUT,4,4,164,12,SS_CENTERIMAGE,
                     WS_EX_CLIENTEDGE
@@ -229,25 +233,25 @@ END
 
 IDD_DIALOG_CONVERSION DIALOGEX 0, 0, 320, 130
 STYLE DS_SHELLFONT | WS_MINIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "ReactOS Rechner"
+CAPTION "ReactOS 计算器"
 MENU IDR_MENU_STANDARD
 FONT 8, "MS Shell Dlg"
 BEGIN
-    PUSHBUTTON      "Konvertiere",IDC_BUTTON_CONVERT,35,105,76,17
+    PUSHBUTTON      "转换",IDC_BUTTON_CONVERT,35,105,76,17
     COMBOBOX        IDC_COMBO_CATEGORY,4,31,140,168,CBS_DROPDOWNLIST | 
                     WS_VSCROLL | WS_TABSTOP | CBS_SORT
-    LTEXT           "Kategorie:",IDC_STATIC,4,20,56,8
+    LTEXT           "类别:",IDC_STATIC,4,20,56,8
     COMBOBOX        IDC_COMBO_FROM,4,60,140,168,CBS_DROPDOWNLIST | 
                     WS_VSCROLL | WS_TABSTOP | CBS_SORT
-    LTEXT           "Konvertiere von:",IDC_STATIC,4,49,56,8
+    LTEXT           "从...转换:",IDC_STATIC,4,49,56,8
     COMBOBOX        IDC_COMBO_TO,4,87,140,168,CBS_DROPDOWNLIST | WS_VSCROLL | 
                     WS_TABSTOP | CBS_SORT
-    LTEXT           "Konvertiere zu:",IDC_STATIC,4,76,56,8
+    LTEXT           "转换为:",IDC_STATIC,4,76,56,8
     CONTROL         "C",IDC_BUTTON_CANC,"Button",BS_OWNERDRAW | BS_CENTER | 
                     BS_VCENTER | BS_NOTIFY | WS_TABSTOP,276,24,40,17
     CONTROL         "CE",IDC_BUTTON_CE,"Button",BS_OWNERDRAW | BS_CENTER | 
                     BS_VCENTER | BS_NOTIFY | WS_TABSTOP,232,24,40,17
-    CONTROL         "Zurück",IDC_BUTTON_BACK,"Button",BS_OWNERDRAW | 
+    CONTROL         "Back",IDC_BUTTON_BACK,"Button",BS_OWNERDRAW | 
                     BS_CENTER | BS_VCENTER | BS_NOTIFY | WS_TABSTOP,188,24,
                     40,17
     RTEXT           "",IDC_TEXT_OUTPUT,4,4,312,12,SS_CENTERIMAGE,
@@ -307,16 +311,16 @@ END
 
 IDD_DIALOG_ABOUT DIALOGEX DISCARDABLE  0, 0, 264, 169
 STYLE DS_SHELLFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "Über ReactOS Rechner"
+CAPTION "关于 ReactOS 计算器"
 FONT 8, "MS Shell Dlg"
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,105,148,52,16
+    DEFPUSHBUTTON   "确定",IDOK,105,148,52,16
     CONTROL         IDB_BITMAP_ROS,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE | 
                     SS_REALSIZEIMAGE | WS_BORDER,4,4,104,48
-    LTEXT           "ReactOS Rechner",IDC_STATIC,120,12,132,8,
+    LTEXT           "ReactOS 计算器",IDC_STATIC,120,12,132,8,
                     SS_CENTERIMAGE
-    LTEXT           "Version ",IDC_TEXT_VERSION,120,20,132,8,SS_CENTERIMAGE
-    LTEXT           "Geschrieben von Carlo Bramini",IDC_STATIC,120,32,132,8,
+    LTEXT           "版本 ",IDC_TEXT_VERSION,120,20,132,8,SS_CENTERIMAGE
+    LTEXT           "作者 Carlo Bramini",IDC_STATIC,120,32,132,8,
                     SS_CENTERIMAGE
     GROUPBOX        "",IDC_STATIC,112,0,148,52
     GROUPBOX        "",IDC_STATIC,4,56,256,88
@@ -326,15 +330,15 @@ END
 
 IDD_DIALOG_STAT DIALOGEX DISCARDABLE  0, 0, 163, 85
 STYLE DS_SHELLFONT | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "Statistikbox"
+CAPTION "统计框"
 FONT 8, "MS Shell Dlg"
 BEGIN
     LISTBOX         IDC_LIST_STAT,4,4,156,40,LBS_NOINTEGRALHEIGHT | 
                     WS_VSCROLL | WS_TABSTOP
-    PUSHBUTTON      "RET",IDC_BUTTON_RET,4,48,36,16
-    PUSHBUTTON      "LOAD",IDC_BUTTON_LOAD,44,48,36,16
-    PUSHBUTTON      "CD",IDC_BUTTON_CD,84,48,36,16
-    PUSHBUTTON      "CAD",IDC_BUTTON_CAD,124,48,36,16
+    PUSHBUTTON      "返回",IDC_BUTTON_RET,4,48,36,16
+    PUSHBUTTON      "加载",IDC_BUTTON_LOAD,44,48,36,16
+    PUSHBUTTON      "清除",IDC_BUTTON_CD,84,48,36,16
+    PUSHBUTTON      "全清",IDC_BUTTON_CAD,124,48,36,16
     CTEXT           "n=0",IDC_TEXT_NITEMS,4,68,156,12,SS_CENTERIMAGE | 
                     SS_SUNKEN
 END
@@ -343,89 +347,89 @@ END
 
 IDR_MENU_SCIENTIFIC_1 MENU DISCARDABLE 
 BEGIN
-    POPUP "Bearbeiten"
+    POPUP "编辑"
     BEGIN
-        MENUITEM "Kopieren\tSTRG-C",            IDM_EDIT_COPY
-        MENUITEM "Einfügen\tSTRG-V",            IDM_EDIT_PASTE
+        MENUITEM "复制\tCtrl+C",                IDM_EDIT_COPY
+        MENUITEM "粘贴\tCtrl+V",                IDM_EDIT_PASTE
     END
-    POPUP "Ansicht"
+    POPUP "查看"
     BEGIN
-        MENUITEM "Standard",                    IDM_VIEW_STANDARD, CHECKED
-        MENUITEM "Wissenschaftlich",            IDM_VIEW_SCIENTIFIC, CHECKED
-        MENUITEM "Konversion",                  IDM_VIEW_CONVERSION
+        MENUITEM "标准型",                        IDM_VIEW_STANDARD, CHECKED
+        MENUITEM "科学型",                        IDM_VIEW_SCIENTIFIC, CHECKED
+        MENUITEM "转换",                        IDM_VIEW_CONVERSION
         MENUITEM SEPARATOR
-        MENUITEM "Hex\tF5",                     IDM_VIEW_HEX, CHECKED
-        MENUITEM "Dezimal\tF6",                 IDM_VIEW_DEC, CHECKED
-        MENUITEM "Oktal\tF7",                   IDM_VIEW_OCT, CHECKED
-        MENUITEM "Binär\tF8",                   IDM_VIEW_BIN, CHECKED
+        MENUITEM "十六进制\tF5",                 IDM_VIEW_HEX, CHECKED
+        MENUITEM "十进制\tF6",                   IDM_VIEW_DEC, CHECKED
+        MENUITEM "八进制\tF7",                   IDM_VIEW_OCT, CHECKED
+        MENUITEM "二进制\tF8",                   IDM_VIEW_BIN, CHECKED
         MENUITEM SEPARATOR
-        MENUITEM "Degree\tF2",                  IDM_VIEW_DEG, CHECKED
-        MENUITEM "Radian\tF3",                  IDM_VIEW_RAD, CHECKED
-        MENUITEM "Grad\tF4",                    IDM_VIEW_GRAD, CHECKED
+        MENUITEM "角度\tF2",                    IDM_VIEW_DEG, CHECKED
+        MENUITEM "弧度\tF3",                    IDM_VIEW_RAD, CHECKED
+        MENUITEM "梯度\tF4",                    IDM_VIEW_GRAD, CHECKED
         MENUITEM SEPARATOR
-        MENUITEM "Zifferngruppierung",          IDM_VIEW_GROUP, CHECKED
+        MENUITEM "数字分组",                    IDM_VIEW_GROUP, CHECKED
     END
-    POPUP "Hilfe"
+    POPUP "帮助"
     BEGIN
-        MENUITEM "Hilfethemen",                 IDM_HELP_HELP
+        MENUITEM "帮助主题",                     IDM_HELP_HELP
         MENUITEM SEPARATOR
-        MENUITEM "Info",                        IDM_HELP_ABOUT
+        MENUITEM "关于 ReactOS 计算器",          IDM_HELP_ABOUT
     END
 END
 
 IDR_MENU_SCIENTIFIC_2 MENU DISCARDABLE 
 BEGIN
-    POPUP "Bearbeiten"
+    POPUP "编辑"
     BEGIN
-        MENUITEM "Kopieren\tSTRG-C",            IDM_EDIT_COPY
-        MENUITEM "Einfügen\tSTRG-V",            IDM_EDIT_PASTE
+        MENUITEM "复制\tCtrl+C",                IDM_EDIT_COPY
+        MENUITEM "粘贴\tCtrl+V",                IDM_EDIT_PASTE
     END
-    POPUP "Ansicht"
+    POPUP "查看"
     BEGIN
-        MENUITEM "Standard",                    IDM_VIEW_STANDARD, CHECKED
-        MENUITEM "Wissenschaftlich",            IDM_VIEW_SCIENTIFIC, CHECKED
-        MENUITEM "Konversion",                  IDM_VIEW_CONVERSION
+        MENUITEM "标准型",                       IDM_VIEW_STANDARD, CHECKED
+        MENUITEM "科学型",                       IDM_VIEW_SCIENTIFIC, CHECKED
+        MENUITEM "转换",                         IDM_VIEW_CONVERSION
         MENUITEM SEPARATOR
-        MENUITEM "Hex\tF5",                     IDM_VIEW_HEX, CHECKED
-        MENUITEM "Dezimal\tF6",                 IDM_VIEW_DEC, CHECKED
-        MENUITEM "Oktal\tF7",                   IDM_VIEW_OCT, CHECKED
-        MENUITEM "Binär\tF8",                   IDM_VIEW_BIN, CHECKED
+        MENUITEM "十六进制\tF5",                 IDM_VIEW_HEX, CHECKED
+        MENUITEM "十进制\tF6",                   IDM_VIEW_DEC, CHECKED
+        MENUITEM "八进制\tF7",                   IDM_VIEW_OCT, CHECKED
+        MENUITEM "二进制\tF8",                   IDM_VIEW_BIN, CHECKED
         MENUITEM SEPARATOR
-        MENUITEM "Qword\tF12",                  IDM_VIEW_QWORD, CHECKED
-        MENUITEM "Dword\tF2",                   IDM_VIEW_DWORD, CHECKED
-        MENUITEM "Word\tF3",                    IDM_VIEW_WORD, CHECKED
-        MENUITEM "Byte\tF4",                    IDM_VIEW_BYTE, CHECKED
+        MENUITEM "四字\tF12",                   IDM_VIEW_QWORD, CHECKED
+        MENUITEM "双字\tF2",                    IDM_VIEW_DWORD, CHECKED
+        MENUITEM "字\tF3",                      IDM_VIEW_WORD, CHECKED
+        MENUITEM "字节\tF4",                    IDM_VIEW_BYTE, CHECKED
         MENUITEM SEPARATOR
-        MENUITEM "Zifferngruppierung",          IDM_VIEW_GROUP, CHECKED
+        MENUITEM "数字分组",                     IDM_VIEW_GROUP, CHECKED
     END
-    POPUP "Hilfe"
+    POPUP "帮助"
     BEGIN
-        MENUITEM "Hilfethemen",                 IDM_HELP_HELP
+        MENUITEM "帮助主题",                     IDM_HELP_HELP
         MENUITEM SEPARATOR
-        MENUITEM "Über ReactOS Rechner",        IDM_HELP_ABOUT
+        MENUITEM "关于 ReactOS 计算器",          IDM_HELP_ABOUT
     END
 END
 
 IDR_MENU_STANDARD MENU DISCARDABLE 
 BEGIN
-    POPUP "Bearbeiten"
+    POPUP "编辑"
     BEGIN
-        MENUITEM "Kopieren\tSTRG-C",            IDM_EDIT_COPY
-        MENUITEM "Einfügen\tSTRG-V",            IDM_EDIT_PASTE
+        MENUITEM "复制\tCtrl+C",                IDM_EDIT_COPY
+        MENUITEM "粘贴\tCtrl+V",                IDM_EDIT_PASTE
     END
-    POPUP "Ansicht"
+    POPUP "查看"
     BEGIN
-        MENUITEM "Standard",                    IDM_VIEW_STANDARD, CHECKED
-        MENUITEM "Wissenschaftlich",            IDM_VIEW_SCIENTIFIC, CHECKED
-        MENUITEM "Konversion",                  IDM_VIEW_CONVERSION
+        MENUITEM "标准型",                      IDM_VIEW_STANDARD, CHECKED
+        MENUITEM "科学型",                      IDM_VIEW_SCIENTIFIC, CHECKED
+        MENUITEM "转换",                        IDM_VIEW_CONVERSION
         MENUITEM SEPARATOR
-        MENUITEM "Zifferngruppierung",          IDM_VIEW_GROUP, CHECKED
+        MENUITEM "数字分组",                    IDM_VIEW_GROUP, CHECKED
     END
-    POPUP "Hilfe"
+    POPUP "帮助"
     BEGIN
-        MENUITEM "Hilfethemen",                 IDM_HELP_HELP
+        MENUITEM "帮助主题",                     IDM_HELP_HELP
         MENUITEM SEPARATOR
-        MENUITEM "Über ReactOS Rechner",        IDM_HELP_ABOUT
+        MENUITEM "关于 ReactOS 计算器",          IDM_HELP_ABOUT
     END
 END
 
@@ -433,302 +437,302 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_STRING_LICENSE      "ReactOS Rechner ist freie Software, herausgegeben unter der GNU GPL Lizenz.\r\n\r\nSie können hier eine Kopie der GNU GPL Lizenz erhalten:\r\nhttp://www.gnu.org/licenses/gpl.html\r\n\r\nSie können hier auch eine Übersetzung der GNU GPL Lizenz erhalten:\r\nhttp://www.gnu.org/licenses/translations.html"
-    IDS_MATH_ERROR          "Fehler"
-    IDS_QUICKHELP           "Schnellhilfe"
+    IDS_STRING_LICENSE      "ReactOS 计算器是在 GNU GPL 协议下发行的自由软件。\r\n\r\n你可以从这儿取得一份 GNU GPL 协议的副本：\r\nhttp://www.gnu.org/licenses/gpl.html\r\n\r\n你也可以从这儿取得其翻译：\r\nhttp://www.gnu.org/licenses/translations.html"
+    IDS_MATH_ERROR          "错误"
+    IDS_QUICKHELP           "快速帮助"
 END
 
-// Konversionstypen
+// Types of conversion
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_CONV_POWER          "Arbeit"
-    IDS_CONV_PRESSURE       "Druck"
-    IDS_CONV_ENERGY         "Energie"
-    IDS_CONV_AREA           "Fläche"
-    IDS_CONV_VELOCITY       "Geschwindigkeit"
-    IDS_CONV_WEIGHT         "Gewicht"
-    IDS_CONV_LENGTH         "Längenmaß"
-    IDS_CONV_TEMPERATURE    "Temperatur"
-    IDS_CONV_CONSUMPTION    "Verbrauch (Motoren)"
-    IDS_CONV_VOLUME         "Volumeneinheit"
-    IDS_CONV_CURRENCY       "Währung"
-    IDS_CONV_ANGLE          "Winkel"
-    IDS_CONV_TIME           "Zeit"
+    IDS_CONV_ANGLE          "角"
+    IDS_CONV_AREA           "面积"
+    IDS_CONV_CONSUMPTION    "油耗 (引擎)"
+    IDS_CONV_CURRENCY       "货币"
+    IDS_CONV_ENERGY         "能量"
+    IDS_CONV_LENGTH         "长度"
+    IDS_CONV_POWER          "功率"
+    IDS_CONV_PRESSURE       "压力"
+    IDS_CONV_TEMPERATURE    "温度"
+    IDS_CONV_TIME           "时间"
+    IDS_CONV_VELOCITY       "速度"
+    IDS_CONV_VOLUME         "体积"
+    IDS_CONV_WEIGHT         "质量"
 END
 
-// WINKELTYPEN
+// TYPES OF ANGLES
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_ANGLE_GRADIANS      "Gon"
-    IDS_ANGLE_DEGREES       "Grad"
-    IDS_ANGLE_RADIANS       "Radiant"
+    IDS_ANGLE_DEGREES       "角度"
+    IDS_ANGLE_GRADIANS      "梯度"
+    IDS_ANGLE_RADIANS       "弧度"
 END
 
-// FLÄCHENTYPEN
+// TYPES OF AREAS
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_AREA_ACRES                  "Acre"
-    IDS_AREA_ACRES_BRAZIL           "Acre (Brasilien)"
-    IDS_AREA_ACRES_FRANCE           "Acre (Frankreich)"
-    IDS_AREA_ACRES_SCOTS            "Acre (Schottland)"
-    IDS_AREA_ACRES_US               "Acre (USA)"
-    IDS_AREA_ARES                   "Ar"
-    IDS_AREA_CHOU                   "Chou"
-    IDS_AREA_DANBO                  "Danbo"
-    IDS_AREA_HECTARES               "Hektar"
+    IDS_AREA_ACRES                  "英亩"
+    IDS_AREA_ACRES_BRAZIL           "英亩 (巴西)"
+    IDS_AREA_ACRES_FRANCE           "英亩 (法国)"
+    IDS_AREA_ACRES_SCOTS            "英亩 (苏格兰)"
+    IDS_AREA_ACRES_US               "英亩 (美国)"
+    IDS_AREA_ARES                   "公亩"
+    IDS_AREA_CHOU                   "畴"
+    IDS_AREA_DANBO                  "大亩"
+    IDS_AREA_HECTARES               "公顷"
     IDS_AREA_JEONGBO                "Jeongbo"
-    IDS_AREA_MORGEN_HUNGARY         "Morgen (Ungarn)"
-    IDS_AREA_MU                     "Mu"
-    IDS_AREA_PING                   "Ping"
-    IDS_AREA_PYEONG                 "Pyeong"
+    IDS_AREA_MORGEN_HUNGARY         "摩根 (匈牙利)"
+    IDS_AREA_MU                     "亩"
+    IDS_AREA_PING                   "坪"
+    IDS_AREA_PYEONG                 "坪 (韩国)"
     IDS_AREA_PYEONGBANGJA           "Pyeongbangja"
-    IDS_AREA_RAI                    "Rai"
-    IDS_AREA_SE                     "Se"
-    IDS_AREA_SQUARE_CHR             "Quadratchr"
-    IDS_AREA_SQUARE_FATHOMS         "Quadratfathom"
-    IDS_AREA_SQUARE_FATHOMS_HUNGARY "Quadratfathom (Ungarn)"
-    IDS_AREA_SQUARE_FEET            "Quadratfuß"
-    IDS_AREA_SQUARE_KILOMETERS      "Quadratkilometer"
-    IDS_AREA_SQUARE_LAR             "Quadratlar"
-    IDS_AREA_SQUARE_METER           "Quadratmeter"
-    IDS_AREA_SQUARE_MILES           "Quadratmeilen"
-    IDS_AREA_SQUARE_MILLIMETERS     "Quadratmillimeter"
-    IDS_AREA_SQUARE_SHAKU           "Quadratshaku"
-    IDS_AREA_SQUARE_TSUEN           "Quadrattsuen"
-    IDS_AREA_SQUARE_VA              "Quadratva"
-    IDS_AREA_SQUARE_YARD            "Quadratyard"
-    IDS_AREA_SQUARE_CENTIMETERS     "Quadratzentimeter"
-    IDS_AREA_SQUARE_INCHES          "Quadratzoll"
-    IDS_AREA_TAN                    "Tan"
-    IDS_AREA_TSUBO                  "Tsubo"
+    IDS_AREA_RAI                    "莱"
+    IDS_AREA_SE                     "亩 (日本)"
+    IDS_AREA_SQUARE_CENTIMETERS     "平方厘米"
+    IDS_AREA_SQUARE_CHR             "Square chr"
+    IDS_AREA_SQUARE_FATHOMS         "平方英寻"
+    IDS_AREA_SQUARE_FATHOMS_HUNGARY "平方英寻 (匈牙利)"
+    IDS_AREA_SQUARE_FEET            "平方英尺"
+    IDS_AREA_SQUARE_INCHES          "平方英寸"
+    IDS_AREA_SQUARE_KILOMETERS      "平方千米"
+    IDS_AREA_SQUARE_LAR             "平方拉尔"
+    IDS_AREA_SQUARE_METER           "平方米"
+    IDS_AREA_SQUARE_MILES           "平方英里"
+    IDS_AREA_SQUARE_MILLIMETERS     "平方毫米"
+    IDS_AREA_SQUARE_SHAKU           "平方尺"
+    IDS_AREA_SQUARE_TSUEN           "平方寸"
+    IDS_AREA_SQUARE_VA              "Square va"
+    IDS_AREA_SQUARE_YARD            "平方码"
+    IDS_AREA_TAN                    "段"
+    IDS_AREA_TSUBO                  "坪 (日本)"
 END
 
-// VERBRAUCHSTYPEN
+// TYPES OF COMSUMPTIONS
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_CONSUMPTION_KM_PER_L        "Kilometer/Liter"
-    IDS_CONSUMPTION_L_PER_100_KM    "Liter/100 Kilometer"
-    IDS_CONSUMPTION_MILES_GALLON_UK "Meilen/Gallone (UK)"
-    IDS_CONSUMPTION_MILES_GALLON_US "Meilen/Gallone (USA)"
+    IDS_CONSUMPTION_KM_PER_L        "千米/升"
+    IDS_CONSUMPTION_L_PER_100_KM    "升/100 千米"
+    IDS_CONSUMPTION_MILES_GALLON_UK "英里/加仑 (英国)"
+    IDS_CONSUMPTION_MILES_GALLON_US "英里/加仑 (美国)"
 END
 
-// WÄHRUNGSTYPEN
+// TYPES OF CURRENCIES
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_CURRENCY_BELGIAN_FRANC      "Belgische Franc"
-    IDS_CURRENCY_DEUTSCHE_MARK      "Deutsche Mark"
-    IDS_CURRENCY_EURO               "Euro"
-    IDS_CURRENCY_FINNISH_MARKKA     "Finnische Mark"
-    IDS_CURRENCY_FRENCH_FRANC       "Französchische Franc"
-    IDS_CURRENCY_GREEK_DRACHMA      "Griechische Drachme"
-    IDS_CURRENCY_IRISH_POUND        "Irische Pfund"
-    IDS_CURRENCY_ITALIAN_LIRA       "Italienische Lire"
-    IDS_CURRENCY_LUXEMBOURG_FRANC   "Luxemburgische Franc"
-    IDS_CURRENCY_MALTESE_LIRA       "Maltesische Lire"
-    IDS_CURRENCY_DUTCH_GUILDER      "Niederländische Guilder"
-    IDS_CURRENCY_AUSTRIAN_SCHILLING "Österreichische Schilling"
-    IDS_CURRENCY_PORTOGUESE_ESCUDO  "Portugiesische Escudo"
-    IDS_CURRENCY_SLOVAK_KORUNA      "Slowakische Krone"
-    IDS_CURRENCY_SLOVENIAN_TOLAR    "Slovenische Tolar"
-    IDS_CURRENCY_SPANISH_PESETA     "Spanische Peseta"
-    IDS_CURRENCY_CZECH_KORUNA       "Tschechische Krone"
-    IDS_CURRENCY_CYPRIOT_POUND      "Zypriotische Pfund"
+    IDS_CURRENCY_AUSTRIAN_SCHILLING "奥地利先令"
+    IDS_CURRENCY_BELGIAN_FRANC      "比利时法郎"
+    IDS_CURRENCY_CYPRIOT_POUND      "塞浦路斯镑"
+    IDS_CURRENCY_CZECH_KORUNA       "捷克克朗"
+    IDS_CURRENCY_DEUTSCHE_MARK      "德国马克"
+    IDS_CURRENCY_DUTCH_GUILDER      "荷兰盾"
+    IDS_CURRENCY_EURO               "欧元"
+    IDS_CURRENCY_FINNISH_MARKKA     "芬兰马克"
+    IDS_CURRENCY_FRENCH_FRANC       "法郎"
+    IDS_CURRENCY_GREEK_DRACHMA      "希腊德拉克马"
+    IDS_CURRENCY_IRISH_POUND        "爱尔兰镑"
+    IDS_CURRENCY_ITALIAN_LIRA       "意大利里拉"
+    IDS_CURRENCY_LUXEMBOURG_FRANC   "卢森堡法郎"
+    IDS_CURRENCY_MALTESE_LIRA       "马耳他里拉"
+    IDS_CURRENCY_PORTOGUESE_ESCUDO  "葡萄牙埃斯库多"
+    IDS_CURRENCY_SLOVAK_KORUNA      "斯洛伐克克朗"
+    IDS_CURRENCY_SLOVENIAN_TOLAR    "斯洛文尼亚拖拉"
+    IDS_CURRENCY_SPANISH_PESETA     "西班牙比塞塔"
 END
 
-// ENERGIETYPEN
+// TYPES OF ENERGIES
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_ENERGY_15_C_CALORIES        "15 °C Kalorien"
-    IDS_ENERGY_BTUS                 "British thermal unit"
-    IDS_ENERGY_EVS                  "Elektronenvolt"
-    IDS_ENERGY_ERGS                 "Ergs"
-    IDS_ENERGY_NUTRITION_CALORIES   "Ernährung Kalorien"
-    IDS_ENERGY_FOOT_POUNDS          "Foot-Pound"
-    IDS_ENERGY_IT_CALORIES          "International Kalorien"
-    IDS_ENERGY_IT_KILOCALORIES      "International Kilokalorien"
-    IDS_ENERGY_JOULES               "Joules"
-    IDS_ENERGY_KILOJOULES           "Kilojoules"
-    IDS_ENERGY_KILOWATT_HOURS       "Kilowattstunden"
-    IDS_ENERGY_TH_CALORIES          "Thermochemische Kalorie"
+    IDS_ENERGY_15_C_CALORIES        "15 °C 卡路里"
+    IDS_ENERGY_BTUS                 "英制热量单位"
+    IDS_ENERGY_ERGS                 "尔格"
+    IDS_ENERGY_EVS                  "电子伏特"
+    IDS_ENERGY_FOOT_POUNDS          "英尺-磅"
+    IDS_ENERGY_IT_CALORIES          "国际蒸汽表卡路里"
+    IDS_ENERGY_IT_KILOCALORIES      "国际蒸汽表千卡路里"
+    IDS_ENERGY_JOULES               "焦耳"
+    IDS_ENERGY_KILOJOULES           "千焦"
+    IDS_ENERGY_KILOWATT_HOURS       "千瓦时"
+    IDS_ENERGY_NUTRITION_CALORIES   "营养卡路里"
+    IDS_ENERGY_TH_CALORIES          "热化学卡路里"
 END
 
-// LÄNGENTYPEN
+// TYPES OF LENGTHS
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_LENGTH_ANGSTROMS            "Angströms"
-    IDS_LENGTH_ASTRONOMICAL_UNITS   "Astronomische Einheiten"
-    IDS_LENGTH_CHAINS_UK            "Chains (UK)"
-    IDS_LENGTH_CHI                  "Chi"
-    IDS_LENGTH_CHOU                 "Chou"
+    IDS_LENGTH_ANGSTROMS            "埃"
+    IDS_LENGTH_ASTRONOMICAL_UNITS   "天文单位"
+    IDS_LENGTH_BARLEYCORNS          "巴利肯"
+    IDS_LENGTH_CENTIMETERS          "厘米"
+    IDS_LENGTH_CHAINS_UK            "链 (英国)"
+    IDS_LENGTH_CHI                  "尺"
+    IDS_LENGTH_CHOU                 "畴"
     IDS_LENGTH_CHR                  "Chr"
-    IDS_LENGTH_CUN                  "Cun"
-    IDS_LENGTH_FATHOMS              "Fathome"
-    IDS_LENGTH_FATHOMS_HUNGARY      "Fathome (Ungarn)"
-    IDS_LENGTH_FURLONGS             "Furlongs"
-    IDS_LENGTH_FEET                 "Fuß"
-    IDS_LENGTH_GAN                  "Gan"
-    IDS_LENGTH_BARLEYCORNS          "Gerstenkorn"
-    IDS_LENGTH_HANDS                "Hände"
+    IDS_LENGTH_CUN                  "寸"
+    IDS_LENGTH_FATHOMS              "英寻"
+    IDS_LENGTH_FATHOMS_HUNGARY      "英寻 (匈牙利)"
+    IDS_LENGTH_FEET                 "英尺"
+    IDS_LENGTH_FURLONGS             "浪"
+    IDS_LENGTH_GAN                  "杆"
+    IDS_LENGTH_HANDS                "掌宽"
     IDS_LENGTH_HUNH                 "Hunh"
-    IDS_LENGTH_JA                   "Ja"
+    IDS_LENGTH_INCHES               "英尺"
+    IDS_LENGTH_JA                   "尺 (韩国)"
     IDS_LENGTH_JEONG                "Jeong"
     IDS_LENGTH_KABIET               "Kabiet"
     IDS_LENGTH_KEN                  "Ken"
     IDS_LENGTH_KEUB                 "Keub"
-    IDS_LENGTH_KILOMETERS           "Kilometer"
-    IDS_LENGTH_LAR                  "Lar"
-    IDS_LENGTH_LIGHT_YEARS          "Lichtjahre"
+    IDS_LENGTH_KILOMETERS           "千米"
+    IDS_LENGTH_LAR                  "拉尔"
+    IDS_LENGTH_LIGHT_YEARS          "光年"
     IDS_LENGTH_LINKS_UK             "Links (UK)"
-    IDS_LENGTH_MILES                "Meilen"
-    IDS_LENGTH_METERS               "Meter"
-    IDS_LENGTH_MICRONS              "Mikrometer"
-    IDS_LENGTH_MILLIMETERS          "Millimeter"
-    IDS_LENGTH_NAUTICAL_MILES       "Nautische Meilen"
+    IDS_LENGTH_METERS               "米"
+    IDS_LENGTH_MICRONS              "微米"
+    IDS_LENGTH_MILES                "英里"
+    IDS_LENGTH_MILLIMETERS          "毫米"
+    IDS_LENGTH_NAUTICAL_MILES       "海里"
     IDS_LENGTH_NIEU                 "Nieu"
     IDS_LENGTH_PARSECS              "Parsecs"
     IDS_LENGTH_PICAS                "Picas"
-    IDS_LENGTH_RI_JAPAN             "Ri (Japan)"
-    IDS_LENGTH_RI_KOREA             "Ri (Korea)"
-    IDS_LENGTH_RODS                 "Rods"
+    IDS_LENGTH_RI_JAPAN             "里 (日本)"
+    IDS_LENGTH_RI_KOREA             "里 (韩国)"
+    IDS_LENGTH_RODS                 "杆"
     IDS_LENGTH_SAWK                 "Sawk"
     IDS_LENGTH_SEN                  "Sen"
-    IDS_LENGTH_SHAKU                "Shaku"
+    IDS_LENGTH_SHAKU                "尺 (日本)"
     IDS_LENGTH_SPAN                 "Span"
-    IDS_LENGTH_SUN                  "Sun"
-    IDS_LENGTH_TSUEN                "Tsuen"
+    IDS_LENGTH_SUN                  "寸 (日本)"
+    IDS_LENGTH_TSUEN                "寸"
     IDS_LENGTH_VA                   "Va"
-    IDS_LENGTH_YARDS                "Yards"
-    IDS_LENGTH_YOTE                 "Yote"
-    IDS_LENGTH_CENTIMETERS          "Zentimeter"
-    IDS_LENGTH_ZHANG                "Zhang"
-    IDS_LENGTH_INCHES               "Zoll"
+    IDS_LENGTH_YARDS                "码"
+    IDS_LENGTH_YOTE                 "约特"
+    IDS_LENGTH_ZHANG                "丈"
 END
 
-// ARBEITSTYPEN
+// TYPES OF POWERS
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_POWER_BTUS_PER_MINUTE       "BTU pro Minute"
-    IDS_POWER_FPS_PER_MINUTE        "Foot-Pound pro Minute"
-    IDS_POWER_KILOWATTS             "Kilowatt"
-    IDS_POWER_MEGAWATTS             "Megawatt"
-    IDS_POWER_HORSEPOWER            "Pferdestärken"
-    IDS_POWER_WATTS                 "Watt"
+    IDS_POWER_BTUS_PER_MINUTE       "英制热量单位每分钟"
+    IDS_POWER_FPS_PER_MINUTE        "英尺-磅每分钟"
+    IDS_POWER_HORSEPOWER            "马力"
+    IDS_POWER_KILOWATTS             "千瓦"
+    IDS_POWER_MEGAWATTS             "兆瓦"
+    IDS_POWER_WATTS                 "瓦"
 END
 
-// DRUCKTYPEN
+// TYPE OF PRESSURES
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_PRESSURE_ATMOSPHERES        "Atmosphären"
-    IDS_PRESSURE_BARS               "Bar"
-    IDS_PRESSURE_HECTOPASCALS       "Hektopascal"
-    IDS_PRESSURE_KILOPASCALS        "Kilopascal"
-    IDS_PRESSURE_MM_OF_MERCURY      "Millimeter auf dem Quecksilber"
-    IDS_PRESSURE_PASCALS            "Pascal"
-    IDS_PRESSURE_PSI                "Pfunddruck pro Quadratzoll"
+    IDS_PRESSURE_ATMOSPHERES        "大气压"
+    IDS_PRESSURE_BARS               "巴"
+    IDS_PRESSURE_HECTOPASCALS       "百帕"
+    IDS_PRESSURE_KILOPASCALS        "千帕"
+    IDS_PRESSURE_MM_OF_MERCURY      "毫米汞柱"
+    IDS_PRESSURE_PASCALS            "帕"
+    IDS_PRESSURE_PSI                "英磅-力每平方英尺"
 END
 
-// TEMPERATURTYPEN
+// TYPES OF TEMPERATURES
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_TEMPERATURE_CELSIUS         "Celsius"
-    IDS_TEMPERATURE_FAHRENHEIT      "Fahrenheit"
-    IDS_TEMPERATURE_KELVIN          "Kelvin"
-    IDS_TEMPERATURE_RANKINE         "Rankine"
+    IDS_TEMPERATURE_CELSIUS         "摄氏度"
+    IDS_TEMPERATURE_FAHRENHEIT      "华氏度"
+    IDS_TEMPERATURE_KELVIN          "开尔文"
+    IDS_TEMPERATURE_RANKINE         "兰金度"
 END
 
 // TYPES OF TIME
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_TIME_DAYS         "Tagen"
-    IDS_TIME_HOURS        "Stunden"
-    IDS_TIME_NANOSECONDS  "Nanosekunden"
-    IDS_TIME_MICROSECONDS "Mikrosekunden"
-    IDS_TIME_MILLISECONDS "Millisekunden"
-    IDS_TIME_MINUTES      "Minuten"
-    IDS_TIME_SECONDS      "Sekunden"
-    IDS_TIME_WEEKS        "Wochen"
-    IDS_TIME_YEARS        "Jahren"
+    IDS_TIME_DAYS         "日"
+    IDS_TIME_HOURS        "小时"
+    IDS_TIME_NANOSECONDS  "纳秒"
+    IDS_TIME_MICROSECONDS "微秒"
+    IDS_TIME_MILLISECONDS "毫秒"
+    IDS_TIME_MINUTES      "分"
+    IDS_TIME_SECONDS      "秒"
+    IDS_TIME_WEEKS        "周"
+    IDS_TIME_YEARS        "年"
 END
 
-// GESCHWINDIGKEITSTYPEN
+// TYPES OF VELOCITIES
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_VELOCITY_CMS_SECOND         "Zentimeter/Sekunde"
-    IDS_VELOCITY_FEET_SECOND        "Fuß/Sekunde"
-    IDS_VELOCITY_FEET_HOUR          "Fuß/Stunde"
-    IDS_VELOCITY_KILOMETERS_HOUR    "Kilometer/Stunde"
-    IDS_VELOCITY_KNOTS              "Knoten"
-    IDS_VELOCITY_MACH               "Mach"
-    IDS_VELOCITY_MILES_HOUR         "Meilen/Stunde"
-    IDS_VELOCITY_METERS_SECOND      "Meter/Sekunde"
+    IDS_VELOCITY_CMS_SECOND         "厘米/小时"
+    IDS_VELOCITY_FEET_HOUR          "英尺/小时"
+    IDS_VELOCITY_FEET_SECOND        "英尺/秒"
+    IDS_VELOCITY_KILOMETERS_HOUR    "千米/小时"
+    IDS_VELOCITY_KNOTS              "节"
+    IDS_VELOCITY_MACH               "马赫"
+    IDS_VELOCITY_METERS_SECOND      "米/秒"
+    IDS_VELOCITY_MILES_HOUR         "英里/小时"
 END
 
-// VOLUMENEINHEITEN
+// TYPES OF VOLUMES
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_VOLUME_BARRELS_UK           "Barrel (UK)"
-    IDS_VOLUME_BARRELS_OIL          "Barrel Öl"
+    IDS_VOLUME_BARRELS_UK           "桶 (英国)"
+    IDS_VOLUME_BARRELS_OIL          "桶油"
     IDS_VOLUME_BUN                  "Bun"
-    IDS_VOLUME_CUBIC_FEET           "Kubikfuß"
-    IDS_VOLUME_CUBIC_METERS         "Kubikmeter"
-    IDS_VOLUME_CUBIC_YARDS          "Kubikyard"
-    IDS_VOLUME_CUBIC_CENTIMETERS    "Kubikzentimeter"
-    IDS_VOLUME_CUBIC_INCHES         "Kubikzoll"
+    IDS_VOLUME_BUSHELS_UK           "蒲式耳 (英国)"
+    IDS_VOLUME_BUSHELS_US           "蒲式耳 (美国)"
+    IDS_VOLUME_CUBIC_CENTIMETERS    "立方厘米"
+    IDS_VOLUME_CUBIC_FEET           "立方英尺"
+    IDS_VOLUME_CUBIC_INCHES         "立方英寸"
+    IDS_VOLUME_CUBIC_METERS         "立方米"
+    IDS_VOLUME_CUBIC_YARDS          "立方码"
     IDS_VOLUME_DOE                  "Doe"
-    IDS_VOLUME_FLUID_OUNCES_UK      "Fluid Unzen (UK)"
-    IDS_VOLUME_FLUID_OUNCES_US      "Fluid Unzen (USA)"
-    IDS_VOLUME_GALLONS_UK           "Gallonen (UK)"
-    IDS_VOLUME_GALLONS_LIQUID_US    "Gallonen, flüssig (USA)"
-    IDS_VOLUME_GALLONS_DRY_US       "Gallonen, trocken (USA)"
-    IDS_VOLUME_GOU                  "Gou"
+    IDS_VOLUME_FLUID_OUNCES_UK      "液盎司 (英国)"
+    IDS_VOLUME_FLUID_OUNCES_US      "液盎司 (美国)"
+    IDS_VOLUME_GALLONS_UK           "加仑 (英国)"
+    IDS_VOLUME_GALLONS_DRY_US       "干量加仑 (美国)"
+    IDS_VOLUME_GALLONS_LIQUID_US    "液加仑 (美国)"
+    IDS_VOLUME_GOU                  "合"
     IDS_VOLUME_HOP                  "Hop"
     IDS_VOLUME_ICCE                 "Icce"
     IDS_VOLUME_KWIAN                "Kwian"
-    IDS_VOLUME_LITERS               "Liter"
+    IDS_VOLUME_LITERS               "升"
     IDS_VOLUME_MAL                  "Mal"
-    IDS_VOLUME_MILLILITERS          "Milliliter"
-    IDS_VOLUME_PINTS_UK             "Pints (UK)"
-    IDS_VOLUME_PINTS_DRY_US         "Pints, trocken (USA)"
-    IDS_VOLUME_PINTS_LIQUID_US      "Pints, flüssig (USA)"
-    IDS_VOLUME_QUARTS_UK            "Quarts (UK)"
-    IDS_VOLUME_QUARTS_LIQUID_US     "Quarts, flüssig (USA)"
-    IDS_VOLUME_QUARTS_DRY_US        "Quarts, trocken (USA)"
-    IDS_VOLUME_BUSHELS_UK           "Scheffel (UK)"
-    IDS_VOLUME_BUSHELS_US           "Scheffel (USA)"
+    IDS_VOLUME_MILLILITERS          "毫升"
+    IDS_VOLUME_PINTS_UK             "品脱 (英国)"
+    IDS_VOLUME_PINTS_DRY_US         "干量品脱 (美国)"
+    IDS_VOLUME_PINTS_LIQUID_US      "液品脱 (美国)"
+    IDS_VOLUME_QUARTS_UK            "夸脱 (英国)"
+    IDS_VOLUME_QUARTS_DRY_US        "干量夸脱 (美国)"
+    IDS_VOLUME_QUARTS_LIQUID_US     "液夸脱 (美国)"
     IDS_VOLUME_SEKI                 "Seki"
     IDS_VOLUME_SYOU                 "Syou"
     IDS_VOLUME_TANANLOUNG           "Tananloung"
     IDS_VOLUME_TANG                 "Tang"
-    IDS_VOLUME_TO                   "To"
+    IDS_VOLUME_TO                   "斗 (日本)"
 END
 
-// GEWICHTSEIHEITEN
+// TYPES OF WEIGHTS
 STRINGTABLE DISCARDABLE
 BEGIN
-    IDS_WEIGHT_BAHT                 "Baht"
+    IDS_WEIGHT_BAHT                 "铢"
+    IDS_WEIGHT_CARATS               "克拉"
     IDS_WEIGHT_CHUNG                "Chung"
     IDS_WEIGHT_DON                  "Don"
-    IDS_WEIGHT_QUINTAL_METRIC       "Doppelzentner (metrisch)"
     IDS_WEIGHT_GEUN                 "Geun"
-    IDS_WEIGHT_GRAMS                "Gramm"
+    IDS_WEIGHT_GRAMS                "克"
     IDS_WEIGHT_GWAN                 "Gwan"
     IDS_WEIGHT_HARB                 "Harb"
-    IDS_WEIGHT_JIN_CHINA            "Jin (China)"
-    IDS_WEIGHT_JIN_TAIWAN           "Jin (Taiwan)"
-    IDS_WEIGHT_KAN                  "Kan"
-    IDS_WEIGHT_CARATS               "Karat"
-    IDS_WEIGHT_KILOGRAMS            "Kilogramm"
-    IDS_WEIGHT_KIN                  "Kin"
-    IDS_WEIGHT_LIANG_CHINA          "Liang (China)"
-    IDS_WEIGHT_LIANG_TAIWAN         "Liang (Taiwan)"
-    IDS_WEIGHT_MONME                "Monme"
-    IDS_WEIGHT_OUNCES_AVOIRDUPOIS   "Unzen, Avoirdupois"
-    IDS_WEIGHT_OUNCES_TROY          "Unzen, Troy"
-    IDS_WEIGHT_POUNDS               "Pfund"
+    IDS_WEIGHT_JIN_CHINA            "斤 (中国)"
+    IDS_WEIGHT_JIN_TAIWAN           "斤 (中国台湾)"
+    IDS_WEIGHT_KAN                  "贯 (日本)"
+    IDS_WEIGHT_KILOGRAMS            "千克"
+    IDS_WEIGHT_KIN                  "斤 (日本)"
+    IDS_WEIGHT_LIANG_CHINA          "两 (中国)"
+    IDS_WEIGHT_LIANG_TAIWAN         "两 (中国台湾)"
+    IDS_WEIGHT_MONME                "两 (日本)"
+    IDS_WEIGHT_OUNCES_AVOIRDUPOIS   "常衡盎司"
+    IDS_WEIGHT_OUNCES_TROY          "金衡盎司"
+    IDS_WEIGHT_POUNDS               "英磅"
+    IDS_WEIGHT_QUINTAL_METRIC       "公担"
     IDS_WEIGHT_SALOUNG              "Saloung"
-    IDS_WEIGHT_STONES               "Stones"
+    IDS_WEIGHT_STONES               "石"
     IDS_WEIGHT_TAMLUNG              "Tamlung"
-    IDS_WEIGHT_TONNES               "Tonnen"
-    IDS_WEIGHT_TONS_UK              "Tonnen (UK)"
-    IDS_WEIGHT_TONS_US              "Tonnen (USA)"
+    IDS_WEIGHT_TONNES               "吨"
+    IDS_WEIGHT_TONS_UK              "吨 (英国)"
+    IDS_WEIGHT_TONS_US              "吨 (美国)"
 END
